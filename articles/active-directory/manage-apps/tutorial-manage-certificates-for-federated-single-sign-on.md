@@ -89,7 +89,8 @@ Next, download the new certificate in the correct format, upload it to the appli
 1. When you want to roll over to the new certificate, go back to the **SAML Signing Certificate** page, and in the newly saved certificate row, select the ellipsis (**...**) and select **Make certificate active**. The status of the new certificate changes to **Active**, and the previously active certificate changes to a status of **Inactive**.
 1. Continue following the application's SAML sign-on configuration instructions that you displayed earlier, so that you can upload the SAML signing certificate in the correct encoding format.
 
-If your application doesn't have any validation for the certificate's expiration, and the certificate matches in both Azure Active Directory and your application, your application is still accessible despite having an expired certificate. Ensure your application can validate the certificate's expiration date.
+If your application doesn't have any validation for the certificate's expiration, and the certificate matches in both Azure Active Directory and your application, your application is still accessible despite having an expired certificate. Ensure your application can validate the certificate's expiration date. If you intend to keep expiration date validation disabled on the application, then a new certificate should not be created in Azure AD until you are ready to perform a certificate rollover. The reason is that if the configuration consists of both an expired active certificate and a valid inactive certificate, Azure AD will automatically begin using the valid certificate.
+
 
 ## Add email notification addresses for certificate expiration
 
@@ -120,7 +121,6 @@ If a certificate is about to expire, you can renew it using a procedure that res
 1. Sign in to the application to make sure that the certificate works correctly.
 
 If your application doesn't validate the certificate expiration configured in Azure Active Directory, and the certificate matches in both Azure Active Directory and your application, your application is still accessible despite having an expired certificate. Ensure your application can validate certificate expiration.
-
 ## Related articles
 
 - [Application management with Azure Active Directory](what-is-application-management.md)
