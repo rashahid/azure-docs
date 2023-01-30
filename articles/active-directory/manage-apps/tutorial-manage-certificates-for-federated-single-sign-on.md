@@ -119,7 +119,7 @@ If a certificate is about to expire, you can renew it using a procedure that res
 1. Before the old certificate expires, follow the instructions in the [Upload and activate a certificate](#upload-and-activate-a-certificate) section earlier. If your application certificate isn't updated after a new certificate is updated in Azure Active Directory, authentication on your application may fail.
 1. Sign in to the application to make sure that the certificate works correctly.
 
-If your application doesn't validate the certificate expiration configured in Azure Active Directory, and the certificate matches in both Azure Active Directory and your application, your application is still accessible despite having an expired certificate. Ensure your application can validate certificate expiration.
+If your application doesn't validate the certificate expiration configured in Azure Active Directory, and the certificate matches in both Azure Active Directory and your application, your application is still accessible despite having an expired certificate. Ensure your application can validate certificate expiration. 
 
 ## Related articles
 
